@@ -1,12 +1,21 @@
-//middleware
-const withAuth = (req, res, next) => {
-    // If the user is not logged in, redirect the request to the login route
-    if (!req.session.logged_in) {
-      res.redirect('/login');
-    } else {
-      next();
+const jwt = require("jsonwebtoken");
+const config = require("config")
+
+module.exports = function(req,res,next) {
+    //get token from header
+    const token = req.header("x-auth-token");
+
+    //check if no token
+    if (!token){
+        res.status(401).json({msg: "no token, auth denied"})
     }
-  };
-  
-  module.exports = withAuth;
-  
+
+    //verify token
+    try {
+        const decoded = jwt.verify(token,config.get("jwtSecret"))
+        req.user = decoded.user;
+        next()
+    } catch(err){
+        res.status(401).json({msg: "token not valid"})
+    }
+}

@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
     {
-        Username : {
+        username : {
             type: String,
             allowNull:false,
             trim: true,
@@ -29,15 +29,13 @@ const UserSchema = new Schema(
             type: String,
             allowNull: false,
             minLength: 8
-            // validate: {
-            //     minlength:[8]
-            // }
+      
         },
 
-        // might need to add more
+        
         avatar: {
             type: String,
-            allowNull: false,
+        
 
         },
         
@@ -50,7 +48,7 @@ const UserSchema = new Schema(
 )
 
 
-// Need to pass word hashing
+
 
 
 const User = mongoose.model("User", UserSchema);
