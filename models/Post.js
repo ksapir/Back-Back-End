@@ -4,10 +4,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-// class Post extends Model {};
+
 
 const PostSchema = new Schema(
     {
+        distance:{
+            type:Number
+        },
         body:{
             type: String,
             allowNull: false
