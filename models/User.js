@@ -33,6 +33,12 @@ const UserSchema = new Schema(
             //     minlength:[8]
             // }
         },
+        userMiles:{
+            type:Number
+        },
+        milesToGo: {
+            type:Number
+        },
 
         // might need to add more
         avatar: {

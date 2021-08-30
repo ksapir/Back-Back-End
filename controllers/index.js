@@ -1,7 +1,7 @@
 const express = require('express');
-const { route } = require('./api');
+const { route } = require('./index2');
 const router = express.Router();
-const apiRoutes = require("./api")
+const apiRoutes = require("./index2")
 const frontEndRoutes = require("./frontEndRoutes")
 
 

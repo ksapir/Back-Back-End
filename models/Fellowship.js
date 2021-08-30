@@ -7,11 +7,17 @@ const Schema = mongoose.Schema;
 
 const FellowshipSchema = new Schema(
     {
-        // members:{
-        //     id: foreignKey,
-            
+        name: {
+            type: String
+        },
+        milesToGo: {
+            type: Number
+        },
+        groupMiles: {
+            type: Number
+        },
 
-        // }
+        
         members:[{
             type: Schema.Types.ObjectId,
             ref: 'User'

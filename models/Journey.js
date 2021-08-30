@@ -6,7 +6,13 @@ const Schema = mongoose.Schema;
 
 
 const JourneySchema = new Schema(
-    {
+    {   name: {
+        type: String
+    },
+    description: {
+        type:String
+    },
+
         members:[{
             type: Schema.Types.ObjectId,
             ref: 'User'
