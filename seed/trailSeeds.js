@@ -690,7 +690,7 @@ const trails = [
         location:"Bellevue",
         state: "WA",
         dogsAllowed:false,
-        entryFee:none,
+        entryFee: 'none',
         description:"This neighborhood park features a nice easy trail that passes a pocket forest on the right where deer can sometimes can be spotted. Once in the park the trail loops through second growth forest around a central grassy area. In the spring there are many flowers that adorn the trail. There are a few peek-a-boo views along the way.  ",
         url:"https://www.wta.org/go-hiking/hikes/keeney-park"
     },
@@ -3360,7 +3360,7 @@ const trails = [
         state: "WA",
         elevationGain:"300 ft",
         highestPoint:"400 ft",
-        dogsAllowedtrue,
+        dogsAllowed: true,
         entryFee:"Northwest Forest Pass",
         description:"Discover the true beauty of the Bogachiel Rain Forest on the Ira Spring Wetland trail. This short trail will take you on a loop through a fern forest and around a large wetland. It makes and excellent short hike or a fun side trip from the Bogachiel River trail.",
         url:"https://www.wta.org/go-hiking/hikes/ira-spring-wetland"
