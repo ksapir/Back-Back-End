@@ -3,8 +3,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-// class Comment extends Model{};
-
 
 const CommentSchema = new Schema(
     {
@@ -15,13 +13,21 @@ const CommentSchema = new Schema(
         date: {
             type: Date,
             default: Date.now
+        },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: "user"
+        },
+        date: {
+            type: Date,
+            default: Date.now
         }
 
     }
 )
 
 
-const Comment = mongoose.model("Comment", CommentSchema);
+const Comment = mongoose.model("comment", CommentSchema);
 
 
 module.exports = Comment

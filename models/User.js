@@ -2,9 +2,6 @@ const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema;
 
-// const bcrypt = reuire("bcrypt")
-
-// class User extends Model {};
 
 const UserSchema = new Schema(
     {
@@ -35,13 +32,11 @@ const UserSchema = new Schema(
         
         avatar: {
             type: String,
-        
-
         },
         
         journey: [{
             type: Schema.Types.ObjectId,
-            ref: 'Journey'
+            ref: 'journey'
         }]
 
     }
@@ -51,6 +46,5 @@ const UserSchema = new Schema(
 
 
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("user", UserSchema);
 
-module.exports = User

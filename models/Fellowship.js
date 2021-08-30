@@ -7,22 +7,21 @@ const Schema = mongoose.Schema;
 
 const FellowshipSchema = new Schema(
     {
-        // members:{
-        //     id: foreignKey,
-            
-
-        // }
         members:[{
             type: Schema.Types.ObjectId,
             ref: 'User'
-        }]
+        }],
+        totalMiles: {
+            type: Number,
+            default: 0,
+        }
     }
 )
 
 
 
 
-const Fellowship = mongoose.model("Fellowship", FellowshipSchema);
+const Fellowship = mongoose.model("fellowship", FellowshipSchema);
 
 
 module.exports = Fellowship
