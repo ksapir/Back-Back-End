@@ -8,6 +8,7 @@ const { check, validationResult} = require("express-validator/check")
 
 const User = require("../../models/User")
 
+
 //log in
 //POST     api/auth
 //@desc    auth user and get token
@@ -30,7 +31,7 @@ router.post("/", [
     let user = await User.findOne({ email });
     if (!user) {
         //send error if already exists
-        return res.status(400).json({errors: [ { msg: "Invalid Credentials" } ] })
+        return res.status(400).json({ft: [ { msg: "Invalid Credentials" } ] })
     }
 
     //return jsonwebtoken
