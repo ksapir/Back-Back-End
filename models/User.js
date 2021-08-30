@@ -33,6 +33,12 @@ const UserSchema = new Schema(
         avatar: {
             type: String,
         },
+        userMiles:{
+            type:Number
+        },
+        milesToGo:{
+            type:Number
+        },
         
         journey: [{
             type: Schema.Types.ObjectId,
@@ -48,3 +54,4 @@ const UserSchema = new Schema(
 
 const User = mongoose.model("user", UserSchema);
 
+module.exports = User

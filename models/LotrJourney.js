@@ -18,6 +18,9 @@ const LotrJourneySchema = new Schema(
         url:{
             type: String,
         
+    },
+    milesToGo:{
+        type:Number
     }
     })
 
