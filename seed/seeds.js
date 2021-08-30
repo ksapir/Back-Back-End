@@ -1,19 +1,24 @@
 // // seed data
-// const db = require('../config/connection');
-// const { 
-//     LotrJourney, 
-//     Trail, 
-// } = require('../models');
+// const db = require('../config/db.js');
+const mongoose = require("mongoose");
+const config = require("config");
+const db = config.get("mongoURI")
 
-// const journeyData = require('./lotrJourney');
-// const trailData = require('./trailSeeds');
+const { 
+    LotrJourney, 
+    Trail, 
+} = require('../models');
 
-// db.once('open', async () => {
-//     await LotrJourney.deleteMany({});
-//     await Trail.deleteMany({});
+const journeyData = require('./lotrJourney');
+const trailData = require('./trailSeeds');
 
-//    await LotrJourney.insertMany(journeyData);
-//     const trails = 
-//     console.log("Data Seeded!");
-//     process.exit(0);
-// });
+db.once('open', async () => {
+    await LotrJourney.deleteMany({});
+    await Trail.deleteMany({});
+
+   await LotrJourney.insertMany(journeyData);
+   await Trail.insertMany(trailData)
+
+    console.log("Data Seeded!");
+    process.exit(0);
+});
