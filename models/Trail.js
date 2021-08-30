@@ -14,7 +14,7 @@ const TrailSchema = new Schema(
 
 
 
-const TrailSchema = mongoose.model("favoriteTrails", TrailSchema);
+const Trail = mongoose.model("favoriteTrails", TrailSchema);
 
 
 module.exports = Trail
