@@ -1,33 +1,42 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
-//connect to deb****
+//connect to db
 const connectDB = require("./config/db")
 
-const routes = require("./controllers");
+// const routes = require("./controllers/api");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+//connect db
+connectDB()
+
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-//init middleware ****
+//init middleware 
 app.use(express.json({extended:false}))
 
 
-// routes**
-app.use(routes)
+// routes
+// app.use(routes)
+app.use("/api/users", require("./controllers/api/users"))
+app.use("/api/auth", require("./controllers/api/auth"))
+app.use("/api/profile", require("./controllers/api/profile"))
+app.use("/api/post", require("./controllers/api/post"))
+app.use("/api/trails", require("./controllers/api/trails"))
 
 //changed url name**
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/there-and-back-again", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/there-and-back-again", {
+//    useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+// })
+// console.log("MongoDB connected"),
 
 //will have to change this to list the the port on the other repo
 app.listen(PORT, () => {

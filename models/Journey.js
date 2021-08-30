@@ -21,7 +21,7 @@ const JourneySchema = new Schema(
 
 
 
-const Journey = mongoose.model("Journey", JourneySchema);
+const Journey = mongoose.model("journey", JourneySchema);
 
 
 module.exports = Journey

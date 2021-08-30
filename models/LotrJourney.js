@@ -23,7 +23,7 @@ const LotrJourneySchema = new Schema(
 
 
 
-const LotrJourney = mongoose.model("LotrJourney", LotrJourneySchema);
+const LotrJourney = mongoose.model("lotrJourney", LotrJourneySchema);
 
 
 module.exports = LotrJourney
