@@ -11,10 +11,12 @@ const FellowshipSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'User'
         }],
-        totalMiles: {
-            type: Number,
-            default: 0,
-        }
+       milesToGo:{
+           type:Number
+       },
+       groupMiles: {
+           type:Number
+       },
     }
 )
 
