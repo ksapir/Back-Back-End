@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 //connect to db
 const connectDB = require("./config/db")
+const cors = require("cors")
 
 // const routes = require("./controllers/api");
 
@@ -19,6 +20,16 @@ app.use(express.json());
 app.use(express.static("public"));
 //init middleware 
 app.use(express.json({extended:false}))
+
+// local
+app.use(cors());
+
+// deployed
+
+app.use(cors({
+  origin:["https://there-and-back-again-front.herokuapp.com"]
+}));
+
 
 
 // routes
