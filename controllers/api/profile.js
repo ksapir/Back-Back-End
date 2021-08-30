@@ -6,6 +6,4 @@ const config = require("config")
 const { check, validationResult} = require("express-validator/check")
 
 
-const { response } = require("express");
-
 module.exports = router

@@ -2,23 +2,19 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-// class Trail extends Model{};
-
-
 const TrailSchema = new Schema(
     {
-        User:{
-            id: foreignKey,
-            
-
-        }
+        user: {
+            type:Schema.Types.ObjectId,
+            ref: "user"
+        },
     }
 )
 
 
 
 
-const TrailSchema = mongoose.model("Favorite Trails", TrailSchema);
+const TrailSchema = mongoose.model("favoriteTrails", TrailSchema);
 
 
 module.exports = Trail

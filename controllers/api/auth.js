@@ -67,7 +67,7 @@ router.post("/", [
 })
 
 //GET     api/auth
-//@desc   
+//@desc   get user with auth
 //@access Public
 router.get("/", auth, async (req,res) => {
     try {
