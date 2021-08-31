@@ -1,7 +1,7 @@
 const db = require('../config/db');
 const  LotrJourney  = require('../models/LotrJourney');
 const  Trail  = require('../models/Trail');
-console.log(db)
+
 const journeyData = require('./lotrJourney.js');
 const trailData = require('./trailSeeds.js');
 

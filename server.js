@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
-//connect to db
 const connectDB = require("./config/db")
+//connect to db
 const cors = require("cors")
 require ('dotenv').config()
 
@@ -13,8 +13,6 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 //connect db
-// connectDB()
-
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
