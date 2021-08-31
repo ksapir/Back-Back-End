@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
+const connectDB = require("./config/db")
 //connect to db
 const cors = require("cors")
+require ('dotenv').config()
 
 // const routes = require("./controllers/api");
 
@@ -11,7 +13,6 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 //connect db
-
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -48,6 +49,8 @@ app.use("/api/trails", require("./controllers/api/trails"))
 // console.log("MongoDB connected"),
 
 //will have to change this to list the the port on the other repo
-app.listen(PORT, () => {
+connectDB.once("open", () => {
+  app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
+})
