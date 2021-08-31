@@ -72,12 +72,13 @@ router.post("/", [
         payload, 
         config.get(jwsecret),
         { expiresIn: 360000 },
-        (err, token) => {
-            if (err) throw err;
-            res.json({ token })
-        }
+        // "(err, token) => {
+        //     if (err) throw err;"
+            res.json({ token, jwsecret }),
+        
+        
         )
-  
+        return res.json({msg: "user created!"})
     } catch(err) {
         console.error(err.message);
         res.status(500).send("Server error")
