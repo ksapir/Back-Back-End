@@ -7,6 +7,12 @@ const Schema = mongoose.Schema;
 
 const FellowshipSchema = new Schema(
     {
+        // journey:{
+        //         type: _ID
+        // },
+     name:{   
+        type: String
+    },
         members:[{
             type: Schema.Types.ObjectId,
             ref: 'User'

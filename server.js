@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-//connect db
-connectDB()
+// //connect db
+// connectDB()
 
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
@@ -26,9 +26,9 @@ app.use(cors());
 
 // deployed
 
-app.use(cors({
-  origin:["https://there-and-back-again-front.herokuapp.com"]
-}));
+// app.use(cors({
+//   origin:["https://there-and-back-again-front.herokuapp.com"]
+// }));
 
 
 
