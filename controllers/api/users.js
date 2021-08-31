@@ -27,36 +27,34 @@ router.post("/", [
         //if there are errors
         return res.status(400).json({ errors: errors.array()})
     }
-
-    const {username, email, password} = req.body
     
     try{
     //see if user exists
-    console.log(User)
-    let user = await User.findOne({ "email":email });
+    console.log(req.body.email)
+    let user = await User.findOne({ email: req.body.email });
     if (user) {
         //send error if already exists
         return res.status(400).json({errors: [ { msg: "User already exists" } ] })
     }
  
     //get users gravatar
-    const avatar = gravatar.url(email, {
+    const avatar = gravatar.url(req.body.email, {
         s: "200",
         r: "pg",
         d: "mm"
     })
 
     user = new User({
-        username,
-        email,
-        avatar,
-        password
+        username: req.body.username,
+        email: req.body.email,
+        avatar: avatar,
+        password: req.body.password
     })
     //encrypt password
 
     const salt = await bcrypt.genSalt(10);
 
-    user.password = await bcrypt.hash(password, salt)
+    user.password = await bcrypt.hash(req.body.password, salt)
 
     //save user to db
 
@@ -66,27 +64,27 @@ router.post("/", [
 
     const payload = {
         user: {
-            id: user.id
+            id: user.id,
+            username: req.body.username,
+            email: req.body.email,
+            avatar: avatar,
         }
     }
 
-    jwt.sign(
-        payload, 
-        config.get(jwsecret),
+    const token = jwt.sign( 
+        payload, jwsecret,
         { expiresIn: 360000 },
-        (err, token) => {
-            if (err) throw err;
-            res.json({ token })
-        }
         )
-  
+      res.json({ token, user:payload })
     } catch(err) {
         console.error(err.message);
         res.status(500).send("Server error")
     }
 
 
-   
+   return (
+       {msg: "User created!"}
+   )
 
 })
 
