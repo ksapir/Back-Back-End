@@ -4,6 +4,7 @@ const logger = require("morgan");
 //connect to db
 const connectDB = require("./config/db")
 const cors = require("cors")
+require ('dotenv').config()
 
 // const routes = require("./controllers/api");
 
@@ -11,7 +12,11 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+<<<<<<< HEAD
 // //connect db
+=======
+//connect db
+>>>>>>> 9ad6757ff9aa54cd10878a9d29f57c87bbe01d4e
 // connectDB()
 
 app.use(logger("dev"));
@@ -50,6 +55,8 @@ app.use("/api/trails", require("./controllers/api/trails"))
 // console.log("MongoDB connected"),
 
 //will have to change this to list the the port on the other repo
-app.listen(PORT, () => {
+connectDB.once("open", () => {
+  app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
+})
