@@ -1,13 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs')
-const path = require('path')
 require ('dotenv').config()
-const {Journey} = require('../../models/Journey')
+const Trail = require('../../models/Trail')
 
 // Gets all trails
 router.get("/", (req,res) =>{
-  
+   Trail.find({}, (err, data) => {
+    if (err) {
+      console.log(err)
+    } else {
+      return res.json(data)
+    }
+})
+})
+
+router.get("/:location", (req,res) =>{
+  Trail.findMany({ location: req.params.location }, (err, data) => {
+   if (err) {
+     console.log(err)
+     return res.send(err)
+   } else {
+     return res.json(data)
+   }
+})
 })
 
 //user has favorite trails
