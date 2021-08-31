@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs')
-const path = require('path')
-const {Journey} = require('../../models/Journey')
+// const fs = require('fs')
+// const path = require('path')
+// const {Journey, db} = require('../../models/Journey')
+const Trail = require('../../models/Trail')
 
 // Gets all trails
-router.get("/", (req,res) =>{
-  
+router.get("/trails", async (req,res) =>{
+  await Trail.find({}).then(data => {
+      console.log(data)
+  return res.json(data)    
+}). catch(err => {
+    console.log(err)
+    return res.json(err)
+})
 })
 
 // router.post('/profile/:id/:journey/currentwalk', (req,res) => {
