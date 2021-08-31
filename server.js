@@ -12,11 +12,8 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-<<<<<<< HEAD
 // //connect db
-=======
 //connect db
->>>>>>> 9ad6757ff9aa54cd10878a9d29f57c87bbe01d4e
 // connectDB()
 
 app.use(logger("dev"));

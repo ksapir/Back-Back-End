@@ -93,27 +93,27 @@ router.post("/", [
 
 // user signup
 
-router.post("/signup", (req, res) => {
-    User.create({
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email
-    }).then(newUser => {
-        const token = jwt.sign({
-            username:newUser.username,
-            email:newUser.email,
-            id:newUser.id
-        },
-        process.env.JWT_SECRET,
-        {
-            expiresIn:"2h"
-        })
-        res.json({token, username:newUser })
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json({ message: "an error occured", err })
-    })
-})
+// router.post("/signup", (req, res) => {
+//     User.create({
+//         username: req.body.username,
+//         password: req.body.password,
+//         email: req.body.email
+//     }).then(newUser => {
+//         const token = jwt.sign({
+//             username:newUser.username,
+//             email:newUser.email,
+//             id:newUser.id
+//         },
+//         process.env.JWT_SECRET,
+//         {
+//             expiresIn:"2h"
+//         })
+//         res.json({token, username:newUser })
+//     }).catch(err => {
+//         console.log(err);
+//         res.status(500).json({ message: "an error occured", err })
+//     })
+// })
 
 // user login
 
@@ -145,20 +145,20 @@ router.post("/signup", (req, res) => {
 //     })
 // })
 
-router.get("/profile",tokenAuth,(req,res)=>{
-    User.findOne({
-        where:{
-            id:req.user.id
-        },
+// router.get("/profile",tokenAuth,(req,res)=>{
+//     User.findOne({
+//         where:{
+//             id:req.user.id
+//         },
     
     
-    }).then(userData=>{
-        return res.json(userData)
-    }).catch(err=>{
-        console.log(err);
-        return res.status(500).json({message:"error",err})
-    })
-})
+//     }).then(userData=>{
+//         return res.json(userData)
+//     }).catch(err=>{
+//         console.log(err);
+//         return res.status(500).json({message:"error",err})
+//     })
+// })
 
 
 
