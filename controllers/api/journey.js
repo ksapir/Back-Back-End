@@ -13,6 +13,8 @@ const { db } = require("../../models/User");
 
 let jwsecret = process.env.JWT_SECRET
 
+let userMiles = 15
+
 //GET api/journey/lotr
 // Gets all lotr journey
 // public
@@ -25,5 +27,11 @@ router.get("/lotr", (req,res) =>{
         res.status(500).json(err);
     })
 })
+
+
+//grab user data from front end
+//have front end pass the usermiles back to back end
+//do linear search
+// send back to front end
 
 module.exports = router

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 
 
-const CommentSchema = new Schema(
+const PastWalkSchema = new Schema(
     {
         body: {
             type: String,
@@ -18,16 +18,18 @@ const CommentSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "user"
         },
-        date: {
-            type: Date,
-            default: Date.now
-        }
+        userWalked: {
+            type: Number
+        },
+        avatar: {
+            type: String
+        }       
 
     }
 )
 
 
-const Comment = mongoose.model("comment", CommentSchema);
+const PastWalk = mongoose.model("pastwalk", PastWalkSchema);
 
 
 module.exports = Comment
