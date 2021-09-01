@@ -3,6 +3,7 @@ const router = express.Router();
 const gravatar = require("gravatar")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+const auth = require("../../middleware/auth")
 const config = require("config")
 require ('dotenv').config()
 const { check, validationResult} = require("express-validator")
@@ -84,6 +85,24 @@ router.post("/", [
        {msg: "User created!"}
    )
 
+})
+
+//GET api/users/:id
+// find user by id
+// Private
+
+router.get("/:id", auth, async (req,res)=> {
+    try {
+        const user = await User.findById(req.params.id);
+
+        if(!user) {
+            return res.status(404).json({msg:"user not found"})
+        }
+        res.json(user)
+    } catch(error){
+        console.error(err.message);
+        res.status(500).send("Server Error")
+    }
 })
 
 module.exports = router
