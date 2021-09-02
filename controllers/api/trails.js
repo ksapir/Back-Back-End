@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Trail = require('../../models/Trail')
 
 // Gets all trails
@@ -28,8 +27,6 @@ router.get("/:location", async (req,res) => {
         res.status(500).send("Server Error")
 }
 })
-
-
 
  module.exports = router
   

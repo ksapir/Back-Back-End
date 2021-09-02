@@ -28,7 +28,7 @@ const UserSchema = new Schema(
             minLength: 8
       
         },
-
+        
         
         avatar: {
             type: String,
