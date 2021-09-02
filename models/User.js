@@ -39,7 +39,7 @@ const UserSchema = new Schema(
         userMilesToGo:{
             type:Number
         },
-        
+       
         journey: [{
             type: Schema.Types.ObjectId,
             ref: 'journey'

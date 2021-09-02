@@ -14,16 +14,16 @@ router.get("/", (req,res) =>{
 })
 })
 
-router.get("/:location", (req,res) =>{
-  Trail.findMany({ location: req.params.location }, (err, data) => {
-   if (err) {
-     console.log(err)
-     return res.send(err)
-   } else {
-     return res.json(data)
-   }
-})
-})
+// router.get("/:location", (req,res) =>{
+//   const location = req.params.location
+//   Trail.findById(location), (err, data) => {
+//    if (err) {
+//      console.log(err)
+//      return res.send(err)
+//    } else {
+//      return res.json(data)
+//    }
+// }})
 
 //user has favorite trails
 

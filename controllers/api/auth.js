@@ -50,7 +50,7 @@ router.post("/", [
                 email: user.email
             }
         }
-        console.log(jwsecret)
+        // console.log(jwsecret)
         const token = jwt.sign(
             payload,
             jwsecret,
@@ -82,14 +82,16 @@ router.get("/", auth, async (req, res) => {
     }
 })
 
+
+// LOGOUT
 //POST    api/authlogout
 //@desc   logout
 //@access Private
 
 router.post("/logout", auth, async (req, res) => {
     try {
-        res.cookie("jwt", " ", {maxAge: 1});
-        res.redirect("/")
+        res.cookie("jwt", "", {maxAge: 1});
+        res.json({msg: "logged out"})
     } catch (err) {
         console.error(err.message);
         res.status(500).send("server error")

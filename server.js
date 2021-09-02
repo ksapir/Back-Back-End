@@ -36,18 +36,18 @@ app.use(cors());
 // app.use(routes)
 app.use("/api/users", require("./controllers/api/users"))
 app.use("/api/auth", require("./controllers/api/auth"))
-app.use("/api/profile", require("./controllers/api/profile"))
 app.use("/api/post", require("./controllers/api/post"))
 app.use("/api/trails", require("./controllers/api/trails"))
+app.use("/api/journey", require("./controllers/api/journey"))
 
 //changed url name**
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/there-and-back-again", {
-//    useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false,
-// })
-// console.log("MongoDB connected"),
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/there-and-back-again", {
+   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+})
+ console.log("MongoDB connected"),
 
 //will have to change this to list the the port on the other repo
 connectDB.once("open", () => {

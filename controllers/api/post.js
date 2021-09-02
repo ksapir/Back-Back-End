@@ -51,7 +51,7 @@ try {
 //@desc   get all posts
 //@access Private
 
-router.get("/", auth, async (req,res) => {
+router.get("/", async (req,res) => {
     try {
         //sort by newest first
         const post = await Post.find().sort({date: -1})
@@ -66,7 +66,7 @@ router.get("/", auth, async (req,res) => {
 //@desc   get post by id
 //@access Private
 
-router.get("/:id", auth, async (req,res) => {
+router.get("/:id", async (req,res) => {
     try {
         //sort by newest first
         const post = await Post.findById(req.params.id);
@@ -75,8 +75,8 @@ router.get("/:id", auth, async (req,res) => {
             return res.status(404).json({msg:"post not found"})
         }
 
-        res.json(posts)
-    } catch (error) {
+        res.json(post)
+    } catch (err) {
         console.error(err.message);
         if(err.kind === "ObjectId"){
             return res.status(404).json({msg:"post not found"})
@@ -93,12 +93,13 @@ router.delete("/:id", auth, async (req,res) => {
     try {
         //sort by newest first
         const post = await Post.findById(req.params.id);
-
+       
         //check user
-        if(post.usertoString() !== req.user.id) {
-            return res.statusCode(401).json({msg:"User not authorized"})
+        if(post.user.toString() !== req.user.id) {
+            return res.status(401).json({msg:"User not authorized"})
         } 
-        
+         console.log("POST", post)
+        console.log("USER", req.user)
         if(!post) {
             return res.status(404).json({msg:"post not found"})
         }
@@ -107,8 +108,8 @@ router.delete("/:id", auth, async (req,res) => {
        
             res.json({msg: "Post removed"})
     } catch (error) {
-        console.error(err.message);
-        if(err.kind === "ObjectId"){
+        console.error(error.message);
+        if(error.kind === "ObjectId"){
             return res.status(404).json({msg:"post not found"})
         }
         res.status(500).send("Server Error")
