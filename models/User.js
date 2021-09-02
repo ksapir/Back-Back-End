@@ -39,6 +39,10 @@ const UserSchema = new Schema(
         userMilesToGo:{
             type:Number
         },
+        post: [{
+            type:Schema.Types.ObjectId,
+            ref: "post"
+        }],
        
         journey: [{
             type: Schema.Types.ObjectId,

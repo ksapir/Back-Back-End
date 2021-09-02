@@ -109,6 +109,10 @@ router.put("/users/:id", async (req, res) => {
 });
 
 
+//GET api/users/:id
+// find user by id
+// Private
+
 router.get("/:id", auth, async (req,res)=> {
     try {
         const user = await User.findById(req.params.id);
