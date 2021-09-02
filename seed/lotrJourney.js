@@ -63,7 +63,7 @@ const LotrJourney = [
         name:"Traveling to Riverdell ",
         distance:362,
         description:"The hobbits and Aragorn cross the last bridge on their way to Rivendell. Even riding a pony, Frodo continues to become weaker.",
-        url:"https://static.wikia.nocookie.net/lotr/images/6/63/Rivendell.jpg/revision/latest?cb=20050830085916"
+        url:"https://i.postimg.cc/HkR0GK6f/frodo-in-rivendell.jpg"
 
     },
     {
