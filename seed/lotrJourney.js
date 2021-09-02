@@ -248,3 +248,6 @@ const LotrJourney = [
     }
 
 ]
+
+
+module.exports = LotrJourney

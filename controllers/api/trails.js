@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-require ('dotenv').config()
+
 const Trail = require('../../models/Trail')
 
 // Gets all trails

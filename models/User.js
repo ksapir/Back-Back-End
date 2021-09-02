@@ -36,7 +36,7 @@ const UserSchema = new Schema(
         userMiles:{
             type:Number
         },
-        milesToGo:{
+        userMilesToGo:{
             type:Number
         },
         
