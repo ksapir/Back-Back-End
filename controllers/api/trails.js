@@ -16,7 +16,6 @@ router.get("/", (req,res) =>{
 
 //GET trail by search
 // public
-
 router.get("/:location", async (req,res) => {
     try{
         const trail = await Trail.find({location:req.params.location})
