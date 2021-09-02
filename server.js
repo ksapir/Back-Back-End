@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+// //connect db
 //connect db
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
