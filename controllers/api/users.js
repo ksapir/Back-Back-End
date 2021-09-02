@@ -61,7 +61,7 @@ router.post(
         email: req.body.email,
         avatar: avatar,
         password: req.body.password,
-        // userMiles: req.body.userMiles,
+        userMiles: 0,
         // userMilesToGo: req.body.userMilesToGo
       });
       //encrypt password
@@ -82,6 +82,7 @@ router.post(
           username: req.body.username,
           email: req.body.email,
           avatar: avatar,
+          userMiles: 0,
         },
       };
 
@@ -115,16 +116,18 @@ router.put("/users/:id", async (req, res) => {
 // Private
 
 
-router.get("/:id", auth, async (req,res)=> {
+router.get("/me", auth, async (req,res)=> {
     try {
-        const user = await User.findById(req.params.id);
+        const user = await User.findById(req.user.id);
 console.log(user)
         if(!user) {
             return res.status(404).json({msg:"user not found"})
         }
         res.json(user)
-    } catch(err){
-        console.error(err.message);
+
+    } catch(error){
+        console.error(error.message);
+
         res.status(500).send("Server Error")
     }
 })
@@ -133,11 +136,11 @@ console.log(user)
 //putting miles to user
 router.put("/", auth, async (req,res) => {
     try{
-        console.log(req.user)
+
         const miles = await User.findByIdAndUpdate(req.user.id, {
              
                 userMiles: req.body.userMiles,
-                // userMilesToGo: req.body.userMilesToGo
+
             
         } , {
             new:true
@@ -153,23 +156,28 @@ router.put("/", auth, async (req,res) => {
 //GET api/users/journey/:id/
 //get journey distance
 //private
-router.put("/journey/:id", auth, async (req,res)=> {
+
+router.get("/journey", auth, async (req,res)=> {
     try {
-    
-         const user = await User.findByIdAndUpdate(req.params.id);
-     
-            const findJourney = LotrJourneySeed;
+        const user = await User.findById(req.user.id);
+        const findJourney = LotrJourneySeed;
+        console.log('--------user')
+        console.log(user)
+
         // in if statement user.usermiles
         if(!user) {
             return res.status(404).json({msg:"user not found"})
         }
-        if (user.userMiles){
+        if (user.userMiles || user.userMiles === 0){
+            console.log('++++++++=')
             for (let index = 0; index < findJourney.length; index++) {
                 const element = findJourney[index].distance
                 // Check to see if the index of the given findJourney is equal to the element we are searching for.
-              
-                if (user.userMiles > 0 && user.userMiles < 5) {
-                    return res.json(findJourney[0])                    
+
+                // console.log(findJourney)
+                if (user.userMiles >= 0 && user.userMiles < 5) {
+                    return res.json(findJourney[0]);
+
                 } else if (user.userMiles > 5 && user.userMiles < 32) {
                     return res.json(findJourney[1]);
                 } else if (user.userMiles > 32 && user.userMiles < 41) {
@@ -253,6 +261,8 @@ router.put("/journey/:id", auth, async (req,res)=> {
                 } 
 
             }
+        } else {
+            res.send('No Mileage Found')
         }
      
          } catch(error){

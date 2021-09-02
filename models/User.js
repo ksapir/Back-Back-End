@@ -34,7 +34,8 @@ const UserSchema = new Schema(
             type: String,
         },
         userMiles:{
-            type:Number
+            type:Number,
+            default: 0
         },
         totalMiles :{
             type:Number

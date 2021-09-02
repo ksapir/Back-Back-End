@@ -47,7 +47,8 @@ router.post("/", [
             user: {
                 id: user.id,
                 user: user.username,
-                email: user.email
+                email: user.email,
+                userMiles: user.userMiles
             }
         }
         // console.log(jwsecret)
