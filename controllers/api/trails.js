@@ -13,5 +13,20 @@ router.get("/", (req,res) =>{
 })
 })
 
+
+//GET trail by search
+// public
+
+router.get("/:location", async (req,res) => {
+    try{
+        const trail = await Trail.find({location:req.params.location})
+        return res.json(trail)
+    }
+    catch(error){
+        console.error(err.message);
+        res.status(500).send("Server Error")
+}
+})
+
  module.exports = router
   
