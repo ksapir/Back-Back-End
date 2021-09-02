@@ -3,7 +3,7 @@ const LotrJourney = [
         name:"Bag End- The Shire",
         distance: 0,
         description:"Gandalf arrives at Bag End to celebrate the 111th birthday of Frodo’s uncle, Bilbo. Bilbo leaves the Ring to Frodo. Once it is found by Gandalf, he insists the Frodo leave the Shire. Frodo departs the Shire with his friend Samwise Gamgee.",
-        url:"https://static.wikia.nocookie.net/lotr/images/e/e4/Vlcsnap-2013-05-19-19h49m07s0.png/revision/latest?cb=20130519155935 "
+        url:"https://i.postimg.cc/rsBZwmjL/Vlcsnap-2013-05-19-19h49m07s0.png"
     },
     {
         name:"Tookland",
@@ -63,13 +63,13 @@ const LotrJourney = [
         name:"Traveling to Riverdell ",
         distance:362,
         description:"The hobbits and Aragorn cross the last bridge on their way to Rivendell. Even riding a pony, Frodo continues to become weaker.",
-        url:"https://static.wikia.nocookie.net/lotr/images/6/63/Rivendell.jpg/revision/latest?cb=20050830085916 "
+        url:"https://i.postimg.cc/HkR0GK6f/frodo-in-rivendell.jpg"
     },
     {
         name:"Bilbo's Trolls",
         distance:393,
         description:"On his trip to the Lonely Mountain, Bilbo encounters a trio of trolls and is captured by them. Gandalf tricks the trolls to argue until morning where they turn to stone. The gang finds Bilbo’s stone trolls on the trip to Rivendell. The find the Great East Road and are found by the elf Glorfindel.",
-        url:"https://static.wikia.nocookie.net/lotr/images/d/d5/StonedTrolls2.jpg/revision/latest?cb=20130113164527 "
+        url:"https://i.postimg.cc/QtxdfNps/d210dd1111092fa93b2c2ee880749269.jpg"
     },
     {
         name:"Attacked by Black Riders ",
@@ -99,7 +99,7 @@ const LotrJourney = [
         name:"The Doors of Moria ",
         distance:798,
         description:"The Fellowship reaches the western Door of Moria which is sealed by ancient magic. The key to entering the mines in a riddle written over the door. “Speak friend, and enter”.",
-        url:"https://static.wikia.nocookie.net/lotr/images/2/2e/Durin%27s_door.png/revision/latest?cb=20140113142736 "
+        url:"https://i.postimg.cc/VNsJVF83/Durin-s-door.png"
     },
     {
         name:"Bridge of Khazad-dum ",
@@ -123,13 +123,13 @@ const LotrJourney = [
         name:"North Undeep ",
         distance:1063,
         description:"The Fellowship travels on where Sam sees Gollum for the first time. Aragorn says that he too has seen and tried to capture him but was unsuccessful. ",
-        url:"https://static.wikia.nocookie.net/lotr/images/5/58/NorthUndeepLOTRO.jpg/revision/latest?cb=20120905033631 "
+        url:"https://i.postimg.cc/CxS5R4zz/North-Undeep-LOTRO.jpg"
     },
     {
         name:"Ambush by Orcs ",
         distance:1267,
         description:"The Fellowship travels down the river Anduin by boat. Suddenly, they are ambushed by Orc arrows. ",
-        url:"https://static.wikia.nocookie.net/lotr/images/d/dd/Goblins2.jpg/revision/latest?cb=20120209161422 "
+        url:"https://i.postimg.cc/bNGH6pTQ/orcs.png"
     },
     {
         name:"The Argonath ",
@@ -153,13 +153,13 @@ const LotrJourney = [
         name:"Travel to the Black Gate ",
         distance:1418,
         description:"Frodo and Sam decide to follow Gollum to the Black Gate. Sam remains suspicious of Gollum as he leads them to the Dead Marshes.",
-        url:"https://static.wikia.nocookie.net/lotr/images/5/57/Black_gate.png/revision/latest?cb=20131113193151 "
+        url:"https://i.postimg.cc/PJ0ZGv41/Black-gate.png"
     },
     {
         name:"Dead Marshes",
         distance:1433,
         description:"Frodo, Sam, and Gollum begin the passage of the Dead Marshes, a haunted swamp. They temporarily have to hide from a flying Nazgul who nearly paralyzes Gollum with fear. Sam overhears Gollum talking to himself, torn between wanting the Ring and wanting to obey Frodo.",
-        url:"https://static.wikia.nocookie.net/lotr/images/5/57/Black_gate.png/revision/latest?cb=20131113193151 "
+        url:"https://i.postimg.cc/mk3cnpPW/lord-of-the-rings-dead-marshes.png"
     },
     {
         name:"The Desolation of the Black Gate ",
@@ -190,7 +190,7 @@ const LotrJourney = [
         name:"Shelob’s Lair ",
         distance:1600,
         description:"Gollum leads Frodo and Sam into Shelob’s Lair before disappearing. Frodo uses the light of Galadriel that illuminates the giant spider-monster Shelob who is used by Sauron to guard his passages. The hobbits try to escape but see Orcs ahead so they must turn back. Sam tries to shout to warn Frodo but Gollum silences him. ",
-        url:"https://static.wikia.nocookie.net/lotr/images/a/a4/Shelobslair.jpg/revision/latest?cb=20100526104131 "
+        url:"https://thumbs.gfycat.com/DismalThinAnt-size_restricted.gif"
     },
     {
         name:"Frodo Stung by Shelob ",
