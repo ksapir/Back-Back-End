@@ -12,7 +12,7 @@ const User = require("../../models/User")
 const Journey = require("../../models/Journey")
 const LotrJourneySeed = require("../../seed/lotrJourney")
 
-const User = require("../../models/User");
+
 
 
 let jwsecret = process.env.JWT_SECRET;
@@ -37,12 +37,12 @@ router.post(
       //if there are errors
       return res.status(400).json({ errors: errors.array() });
     }
-
-    try {
-      //see if user exists
-      console.log(req.body.email);
-      let user = await User.findOne({ email: req.body.email });
-      if (user) {
+    
+    try{
+    //see if user exists
+    // console.log(req.body.email)
+    let user = await User.findOne({ email: req.body.email });
+    if (user) {
         //send error if already exists
         return res
           .status(400)
@@ -176,9 +176,6 @@ router.put("/users/:id", async (req, res) => {
 //     })
 // })
 
-<<<<<<< HEAD
-module.exports = router;
-=======
 //GET api/users/:id
 // find user by id
 // Private
@@ -327,4 +324,3 @@ router.get("/journey/:id", auth, async (req,res)=> {
 
 
 module.exports = router
->>>>>>> 74c8dbe2e3ecf63d928d192f01526c772fb6aa67

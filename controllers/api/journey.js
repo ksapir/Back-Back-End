@@ -8,7 +8,7 @@ require('dotenv').config()
 const { check, validationResult } = require("express-validator/check")
 
 const User = require("../../models/User");
-const LotrJourney = require("../../models/Journey")
+const Journey = require("../../models/Journey")
 const { db } = require("../../models/User");
 
 let jwsecret = process.env.JWT_SECRET
