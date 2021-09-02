@@ -5,6 +5,7 @@ const LotrJourney = [
         description:"Gandalf arrives at Bag End to celebrate the 111th birthday of Frodo’s uncle, Bilbo. Bilbo leaves the Ring to Frodo. Once it is found by Gandalf, he insists the Frodo leave the Shire. Frodo departs the Shire with his friend Samwise Gamgee.",
         url:"https://i.postimg.cc/MZyYy8ys/cntraveler-visiting-the-shire-by-drone.jpg"
 
+    },
     {
         name:"Tookland",
         distance:5,
