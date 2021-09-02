@@ -150,17 +150,6 @@ router.put("/", auth, async (req,res) => {
     }
 })
 
-// router.get("/:miles", async (req,res) => {
-//     try{
-//         const UserData = await User.find({userMiles:req.params.userMiles})
-//         return res.json(UserData)
-//     }
-//     catch(error){
-//         console.error(err.message);
-//         res.status(500).send("Server Error")
-// }
-// })
-
 //GET api/users/journey/:id/
 //get journey distance
 //private
