@@ -2,22 +2,27 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-// class Journey extends Model{};
 
 
 const JourneySchema = new Schema(
     {
-        members:[{
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }],
-        totalMiles: {
+        name:{
+            type: String,
+        },
+        distance:{
             type: Number,
-            default: 0,
-        }
+        },
+        description: {
+            type: String,
+        },
+        url:{
+            type: String,
+        
+    },
+    milesToGo:{
+        type:Number
     }
-)
-
+    })
 
 
 

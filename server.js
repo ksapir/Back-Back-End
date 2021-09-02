@@ -8,7 +8,7 @@ require ('dotenv').config()
 
 // const routes = require("./controllers/api");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -40,13 +40,13 @@ app.use("/api/trails", require("./controllers/api/trails"))
 app.use("/api/journey", require("./controllers/api/journey"))
 
 //changed url name**
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/there-and-back-again", {
-//    useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false,
-// })
-// console.log("MongoDB connected"),
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/there-and-back-again", {
+   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+})
+ console.log("MongoDB connected"),
 
 //will have to change this to list the the port on the other repo
 connectDB.once("open", () => {
