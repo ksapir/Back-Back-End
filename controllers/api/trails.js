@@ -14,6 +14,29 @@ router.get("/", (req,res) =>{
 })
 })
 
+
+
+router.get("/location", (req,res) =>{
+  Trail.find({}, (err, data) => {
+   if (err) {
+     console.log(err)
+   } else {
+     return res.json(data)
+   }
+})
+})
+
+// find by location
+// router.get("/location", (req, res) => {
+//   Trail.findAll().then(location =>{
+//     res.json(location)
+//   }).catch(err=>{
+//     console.log(err);
+//     res.status(500).json()
+//   })
+
+// })
+
 // router.get("/:location", (req,res) =>{
 //   const location = req.params.location
 //   Trail.findById(location), (err, data) => {
