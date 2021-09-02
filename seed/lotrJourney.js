@@ -3,8 +3,8 @@ const LotrJourney = [
         name:"Bag End- The Shire",
         distance: 0,
         description:"Gandalf arrives at Bag End to celebrate the 111th birthday of Frodo’s uncle, Bilbo. Bilbo leaves the Ring to Frodo. Once it is found by Gandalf, he insists the Frodo leave the Shire. Frodo departs the Shire with his friend Samwise Gamgee.",
-        url:"https://i.postimg.cc/rsBZwmjL/Vlcsnap-2013-05-19-19h49m07s0.png"
-    },
+        url:"https://i.postimg.cc/MZyYy8ys/cntraveler-visiting-the-shire-by-drone.jpg"
+
     {
         name:"Tookland",
         distance:5,
@@ -63,7 +63,8 @@ const LotrJourney = [
         name:"Traveling to Riverdell ",
         distance:362,
         description:"The hobbits and Aragorn cross the last bridge on their way to Rivendell. Even riding a pony, Frodo continues to become weaker.",
-        url:"https://i.postimg.cc/HkR0GK6f/frodo-in-rivendell.jpg"
+        url:"https://static.wikia.nocookie.net/lotr/images/6/63/Rivendell.jpg/revision/latest?cb=20050830085916"
+
     },
     {
         name:"Bilbo's Trolls",
