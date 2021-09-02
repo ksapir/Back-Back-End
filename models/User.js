@@ -36,9 +36,9 @@ const UserSchema = new Schema(
         userMiles:{
             type:Number
         },
-        userMilesToGo:{
-            type:Number
-        },
+        // userMilesToGo:{
+        //     type:Number
+        // },
         post: [{
             type:Schema.Types.ObjectId,
             ref: "post"

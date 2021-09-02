@@ -123,7 +123,7 @@ console.log(user)
             return res.status(404).json({msg:"user not found"})
         }
         res.json(user)
-    } catch(error){
+    } catch(err){
         console.error(err.message);
         res.status(500).send("Server Error")
     }
@@ -131,12 +131,13 @@ console.log(user)
 
 
 //putting miles to user
-router.put("/:id", auth, async (req,res) => {
+router.put("/", auth, async (req,res) => {
     try{
-        const miles = await User.findByIdAndUpdate(req.params.id, {
+        console.log(req.user)
+        const miles = await User.findByIdAndUpdate(req.user.id, {
              
                 userMiles: req.body.userMiles,
-                userMilesToGo: req.body.userMilesToGo
+                // userMilesToGo: req.body.userMilesToGo
             
         } , {
             new:true
