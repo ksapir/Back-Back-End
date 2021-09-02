@@ -6,7 +6,9 @@ let jwsecret = process.env.JWT_SECRET
 
 module.exports = function(req,res,next) {
     //get token from header
+console.log(req.headers)
     const token = req.headers.authorization.split(" ")[1];
+
     console.log(token)
   
 

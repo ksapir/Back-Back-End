@@ -37,19 +37,16 @@ const UserSchema = new Schema(
             type:Number,
             default: 0
         },
-        userMilesToGo:{
+        totalMiles :{
             type:Number
         },
+       
         post: [{
             type:Schema.Types.ObjectId,
             ref: "post"
         }],
        
-        journey: [{
-            type: Schema.Types.ObjectId,
-            ref: 'journey'
-        }]
-
+        
     }
 )
 
@@ -57,6 +54,6 @@ const UserSchema = new Schema(
 
 
 
-const User = mongoose.model("user", UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 module.exports = User

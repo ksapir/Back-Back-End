@@ -124,8 +124,10 @@ console.log(user)
             return res.status(404).json({msg:"user not found"})
         }
         res.json(user)
+
     } catch(error){
         console.error(error.message);
+
         res.status(500).send("Server Error")
     }
 })
@@ -134,9 +136,11 @@ console.log(user)
 //putting miles to user
 router.put("/", auth, async (req,res) => {
     try{
+
         const miles = await User.findByIdAndUpdate(req.user.id, {
              
                 userMiles: req.body.userMiles,
+
             
         } , {
             new:true
@@ -152,12 +156,14 @@ router.put("/", auth, async (req,res) => {
 //GET api/users/journey/:id/
 //get journey distance
 //private
+
 router.get("/journey", auth, async (req,res)=> {
     try {
         const user = await User.findById(req.user.id);
         const findJourney = LotrJourneySeed;
         console.log('--------user')
         console.log(user)
+
         // in if statement user.usermiles
         if(!user) {
             return res.status(404).json({msg:"user not found"})
@@ -167,9 +173,11 @@ router.get("/journey", auth, async (req,res)=> {
             for (let index = 0; index < findJourney.length; index++) {
                 const element = findJourney[index].distance
                 // Check to see if the index of the given findJourney is equal to the element we are searching for.
+
                 // console.log(findJourney)
                 if (user.userMiles >= 0 && user.userMiles < 5) {
                     return res.json(findJourney[0]);
+
                 } else if (user.userMiles > 5 && user.userMiles < 32) {
                     return res.json(findJourney[1]);
                 } else if (user.userMiles > 32 && user.userMiles < 41) {
@@ -256,6 +264,7 @@ router.get("/journey", auth, async (req,res)=> {
         } else {
             res.send('No Mileage Found')
         }
+     
          } catch(error){
         console.error(error.message);
         res.status(500).send("Server Error")
