@@ -8,7 +8,7 @@ require('dotenv').config()
 const { check, validationResult } = require("express-validator/check")
 
 const User = require("../../models/User");
-const LotrJourney = require("../../models/LotrJourney")
+const LotrJourney = require("../../models/Journey")
 const { db } = require("../../models/User");
 
 let jwsecret = process.env.JWT_SECRET
@@ -19,7 +19,7 @@ let userMiles = 15
 // Gets all lotr journey
 // public
 router.get("/lotr", (req,res) =>{
-    LotrJourney.find({}).then(lotr => {
+    Journey.find({}).then(lotr => {
         console.log(lotr)
         res.json(lotr)
     }).catch(err=>{
@@ -29,7 +29,9 @@ router.get("/lotr", (req,res) =>{
 })
 
 
-//grab user data from front end
+
+
+
 //have front end pass the usermiles back to back end
 //do linear search
 // send back to front end

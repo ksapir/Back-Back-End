@@ -82,6 +82,7 @@ router.get("/", auth, async (req, res) => {
     }
 })
 
+
 // LOGOUT
 //POST    api/authlogout
 //@desc   logout
