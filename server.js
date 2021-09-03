@@ -22,13 +22,13 @@ app.use(express.static("public"));
 app.use(express.json({extended:false}))
 
 // local
-app.use(cors());
+// app.use(cors());
 
 // deployed
 
-// app.use(cors({
-//   origin:["https://there-and-back-again-front.herokuapp.com"]
-// }));
+app.use(cors({
+  origin:["https://there-and-back-again-front.herokuapp.com"]
+}));
 
 
 
